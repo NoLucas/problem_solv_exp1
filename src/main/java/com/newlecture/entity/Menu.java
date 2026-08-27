@@ -9,21 +9,21 @@ public class Menu {
     private String imgSrc;
     private String description;
     private int price;
-    private int categoryId;
+    private Integer categoryId;
     private Date createTime;
 
     public Menu() {
     }
 
-    public Menu(String korName, String engName, String imgSrc, String description, int price, int categoryId) {
+    public Menu(String korName, String engName, String imgSrc, String description, int price, Integer categoryId) {
         this(0, korName, engName, imgSrc, description, price, categoryId, null);
     }
 
-    public Menu(int id, String korName, String engName, String imgSrc, String description, int price, int categoryId) {
+    public Menu(int id, String korName, String engName, String imgSrc, String description, int price, Integer categoryId) {
         this(id, korName, engName, imgSrc, description, price, categoryId, null);
     }
 
-    public Menu(int id, String korName, String engName, String imgSrc, String description, int price, int categoryId,
+    public Menu(int id, String korName, String engName, String imgSrc, String description, int price, Integer categoryId,
             Date createTime) {
         this.id = id;
         this.korName = korName;
@@ -83,11 +83,11 @@ public class Menu {
         this.price = price;
     }
 
-    public int getCategoryId() {
+    public Integer getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(int categoryId) {
+    public void setCategoryId(Integer categoryId) {
         this.categoryId = categoryId;
     }
 

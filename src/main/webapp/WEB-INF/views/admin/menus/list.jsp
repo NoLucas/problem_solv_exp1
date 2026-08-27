@@ -78,18 +78,38 @@
                 <td>등록일</td>
                 <td>수정</td>
               </tr>
-              #1
-              ☕
-              아메리카노
-              Americano
-              커피 4,500원 2025-01-15
-              상세 수정
+              <c:forEach items="${list}" var="menu">
+                <tr>
+                  <td>#${menu.id}</td>
+                  <td>${menu.imgSrc}</td>
+                  <td>${menu.korName} <br> ${menu.engName}</td>
+                  <td>
+                    <c:choose>
+                      <c:when test="${menu.categoryId == 1}">커피</c:when>
+                      <c:when test="${menu.categoryId == 2}">차</c:when>
+                      <c:when test="${menu.categoryId == 3}">디저트</c:when>
+                      <c:when test="${menu.categoryId == 4}">에이드</c:when>
+                      <c:otherwise>미분류</c:otherwise>
+                    </c:choose>
+                  </td>
+                  <td>${menu.price}원</td>
+                  <td>${menu.createTime}</td>
+                  <td><a href="">상세</a> <a href="">수정</a></td>
+                </tr>
+              </c:forEach>
             </table>
           </section>
         </section>
       </main>
     </div>
     <footer>
+    <div style="background: #ffe7e8; border: 2px solid #e66465">
+  <p style="margin: 15px; line-height: 1.5; text-align: center">
+    Well, I am the slime from your video<br />
+    Oozin' along on your livin' room floor.
+  </p>
+</div>
+
 
     </footer>
   </div>

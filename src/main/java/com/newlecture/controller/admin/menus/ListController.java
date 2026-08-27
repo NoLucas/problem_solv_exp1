@@ -3,6 +3,7 @@ package com.newlecture.controller.admin.menus;
 import java.io.IOException;
 import java.util.List;
 import com.newlecture.entity.Menu;
+import com.newlecture.repository.JdbcMenuRepository;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -15,12 +16,8 @@ public class ListController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        // 이 부분도 이전해 했던 코드를 이용해서 여러분들이 마무리 해주세요
-// 여러분들이 MenuRepository, ListController, jsp를 모두 연동해주세요
-// 앞으로 배우는 html 페이지는 서블릿으로 반영해서 항상 배포해주셔야해요.
-// 배포 방법은 곧? 내일? 이어서 자료가 나갑니다.
-
-        List<Menu> list = null;
+        JdbcMenuRepository repository = new JdbcMenuRepository();
+        List<Menu> list = repository.findAll();
         req.setAttribute("list", list);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/admin/menus/list.jsp");
         dispatcher.forward(req, resp);

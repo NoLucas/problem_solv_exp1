@@ -1,0 +1,108 @@
+package com.newlecture.entity;
+
+import java.util.Date;
+
+public class Menu {
+    private Integer id;
+    private String korName;
+    private String engName;
+    private String imgSrc;
+    private String description;
+    private Integer price;
+    private Integer categoryId;
+    private Date createTime;
+
+    public Menu() {
+    }
+
+    public Menu(String korName, String engName, String imgSrc, String description, Integer price, Integer categoryId) {
+        this(null, korName, engName, imgSrc, description, price, categoryId, null);
+    }
+
+    public Menu(Integer id, String korName, String engName, String imgSrc, String description, Integer price,
+            Integer categoryId) {
+        this(id, korName, engName, imgSrc, description, price, categoryId, null);
+    }
+
+    public Menu(Integer id, String korName, String engName, String imgSrc, String description, Integer price,
+            Integer categoryId,
+            Date createTime) {
+        this.id = id;
+        this.korName = korName;
+        this.engName = engName;
+        this.imgSrc = imgSrc;
+        this.description = description;
+        this.price = price;
+        this.categoryId = categoryId;
+        this.createTime = createTime;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getKorName() {
+        return korName;
+    }
+
+    public void setKorName(String korName) {
+        this.korName = korName;
+    }
+
+    public String getEngName() {
+        return engName;
+    }
+
+    public void setEngName(String engName) {
+        this.engName = engName;
+    }
+
+    public String getImgSrc() {
+        return imgSrc;
+    }
+
+    public void setImgSrc(String imgSrc) {
+        this.imgSrc = imgSrc;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public Integer getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Menu [id=" + id + ", korName=" + korName + ", price=" + price + ", categoryId=" + categoryId + "]";
+    }
+}
